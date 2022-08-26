@@ -7,7 +7,7 @@
 ```yaml
 steps:
   # Create the MongoDB cluster
-  - uses: art049/mongodb-cluster-action
+  - uses: art049/mongodb-cluster-action@v0
     id: mongodb-cluster-action
   # Run a CI job and pass the cluster address
   # in the MONGO_URI env variable
@@ -21,7 +21,7 @@ steps:
 ```yaml
 steps:
   ...
-  - uses: art049/mongodb-cluster-action
+  - uses: art049/mongodb-cluster-action@v0
     id: mongodb-cluster-action
     with:
       version: "3.6"
@@ -33,7 +33,7 @@ steps:
 ```yaml
 steps:
   ...
-  - uses: art049/mongodb-cluster-action
+  - uses: art049/mongodb-cluster-action@v0
     id: mongodb-cluster-action
     with:
       mode: replicaSet
@@ -45,7 +45,7 @@ steps:
 ```yaml
 steps:
   ...
-  - uses: art049/mongodb-cluster-action
+  - uses: art049/mongodb-cluster-action@v0
     id: mongodb-cluster-action
     with:
       mode: sharded
