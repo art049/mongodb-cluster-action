@@ -52,7 +52,22 @@ steps:
   ...
 ```
 
-## Cluster structure details
+## Action details
+
+### Inputs
+
+| Input     | Description                                                                                                        | Default      |
+| --------- | ------------------------------------------------------------------------------------------------------------------ | ------------ |
+| `version` | Specifies the MongoDB version to use. Available versions can be found [here](https://hub.docker.com/_/mongo/tags). | `latest`     |
+| `mode`    | Specifies the type of cluster to create: either `standalone`, `replicaSet` or `sharded`.                           | `standalone` |
+
+### Outputs
+
+| Output              | Description                                                    |
+| ------------------- | -------------------------------------------------------------- |
+| `connection-string` | The connection string to use to connect to the MongoDB cluster |
+
+## Generated clusters details
 
 ### Standalone
 
