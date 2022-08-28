@@ -1,6 +1,6 @@
 # MongoDB Cluster Action
 
-## Usage
+## Github Action Usage
 
 #### Basic
 
@@ -52,20 +52,62 @@ steps:
   ...
 ```
 
-## Action details
+### Action details
 
-### Inputs
+#### Inputs
 
 | Input     | Description                                                                                                        | Default      |
 | --------- | ------------------------------------------------------------------------------------------------------------------ | ------------ |
 | `version` | Specifies the MongoDB version to use. Available versions can be found [here](https://hub.docker.com/_/mongo/tags). | `latest`     |
 | `mode`    | Specifies the type of cluster to create: either `standalone`, `replicaSet` or `sharded`.                           | `standalone` |
 
-### Outputs
+#### Outputs
 
 | Output              | Description                                                    |
 | ------------------- | -------------------------------------------------------------- |
 | `connection-string` | The connection string to use to connect to the MongoDB cluster |
+
+## Taskfile Usage
+
+This action can also be used with [taskfile](https://taskfile.dev/).
+
+Here are the available tasks:
+
+- `standalone-docker`: Start a standalone MongoDB instance using a docker container
+
+- `standalone-docker:down`: Stop the standalone instance
+
+- `replica-compose`: Start a replica set MongoDB cluster using docker-compose
+
+- `replica-compose:down`: Stop the replica set cluster
+
+- `sharded-compose`: Start a sharded MongoDB cluster using docker-compose
+
+- `sharded-compose:down`: Stop the sharded MongoDB cluster
+
+### Integration in an existing taskfile
+
+First add this repository as a submodule in your project:
+
+```bash
+git submodule add https://github.com/art049/mongodb-cluster-action.git .mongodb-cluster-action
+```
+
+Then you can include the taskfile in an existing one by adding the following lines:
+
+```yaml
+includes:
+  mongodb:
+    taskfile: ./.mongodb-cluster-action/Taskfile.yml
+    dir: .mongodb-cluster-action
+    optional: true
+```
+
+You can then use the mongodb cluster actions by adding the `mongodb` prefix. For example to start a standalone MongoDB instance:
+
+```bash
+task mongodb:standalone-docker
+```
 
 ## Generated clusters details
 
@@ -89,7 +131,7 @@ Servers:
 
 Connection string: `mongodb://172.16.17.11:27017,172.16.17.12:27017,172.16.17.13:27017/?replicaSet=mongodb-action-replica-set`
 
-## Sharded Cluster
+### Sharded Cluster
 
 Spawn the most simple sharded cluster as possible with 2 shard servers.
 
@@ -108,6 +150,8 @@ Connection string: `mongodb://172.16.17.10:27017/?retryWrites=false`
 [Source](https://docs.mongodb.com/manual/core/sharded-cluster-components/#development-configuration)
 
 **Note**: Does not work with Mongo 4.4.2 ([issue](https://jira.mongodb.org/browse/SERVER-53259))
+
+</details>
 
 ## License
 
