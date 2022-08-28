@@ -29,14 +29,14 @@ services:
 
   shard0:
     <<: *mongo-base
-    command: mongod --shardsvr # Port: 27018
+    command: mongod --replSet mongodb-action-replica-set --shardsvr # Port: 27018
     networks:
       main-net:
         ipv4_address: 172.16.17.20
 
   shard1:
     <<: *mongo-base
-    command: mongod --shardsvr # Port: 27018
+    command: mongod --replSet mongodb-action-replica-set --shardsvr # Port: 27018
     networks:
       main-net:
         ipv4_address: 172.16.17.21
