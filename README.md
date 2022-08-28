@@ -1,5 +1,7 @@
 # MongoDB Cluster Action
 
+[![Test GH Action](https://github.com/art049/mongodb-cluster-action/actions/workflows/ci.yml/badge.svg)](https://github.com/art049/mongodb-cluster-action/actions/workflows/ci.yml)
+
 ## Github Action Usage
 
 #### Basic

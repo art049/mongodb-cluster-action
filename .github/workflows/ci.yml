@@ -1,4 +1,4 @@
-name: Test GH Action
+name: GH Action
 on:
   push:
     branches: [master]
