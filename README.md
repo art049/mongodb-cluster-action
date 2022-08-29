@@ -135,17 +135,23 @@ Connection string: `mongodb://172.16.17.11:27017,172.16.17.12:27017,172.16.17.13
 
 ### Sharded Cluster
 
-Spawn the most simple sharded cluster as possible with 2 shard servers.
+Spawn the most simple sharded cluster as possible with 3 replicated shards.
 
-[![](https://mermaid.ink/img/eyJjb2RlIjoiZ3JhcGggTFJcbiAgICBDKENvbmZpZ1N2ciA8YnI-IDE3Mi4xNi4xNy4xMToyNzAxOSkgLS0tIFIoUm91dGVyIDxicj4gMTcyLjE2LjE3LjExOjI3MDE3KVxuICAgIFIgLS0tIFMwKFNoYXJkMCA8YnI-IDE3Mi4xNi4xNy4yMDoyNzAxOCkgICAgICAgIFxuICAgIFIgLS0tIFMxKFNoYXJkMSA8YnI-IDE3Mi4xNi4xNy4yMToyNzAxOClcbiAgICBcbiAgICBcbiAgICAiLCJtZXJtYWlkIjp7InRoZW1lIjoiZGVmYXVsdCJ9LCJ1cGRhdGVFZGl0b3IiOmZhbHNlfQ)](https://mermaid-js.github.io/mermaid-live-editor/#/edit/eyJjb2RlIjoiZ3JhcGggTFJcbiAgICBDKENvbmZpZ1N2ciA8YnI-IDE3Mi4xNi4xNy4xMToyNzAxOSkgLS0tIFIoUm91dGVyIDxicj4gMTcyLjE2LjE3LjExOjI3MDE3KVxuICAgIFIgLS0tIFMwKFNoYXJkMCA8YnI-IDE3Mi4xNi4xNy4yMDoyNzAxOCkgICAgICAgIFxuICAgIFIgLS0tIFMxKFNoYXJkMSA8YnI-IDE3Mi4xNi4xNy4yMToyNzAxOClcbiAgICBcbiAgICBcbiAgICAiLCJtZXJtYWlkIjp7InRoZW1lIjoiZGVmYXVsdCJ9LCJ1cGRhdGVFZGl0b3IiOmZhbHNlfQ)
+[![](https://mermaid.ink/img/pako:eNp1ksFqwzAQRH9F7MmG2HiVUDem9JL01pN99UWO5NgQW0GRAiXk36vGK2jsdg9CDDP7BqQbHLRUUMDRiHPHPst6ZH520U6PbX-sroa9NeadYc5TfEkxTxELnme4jVmSJKyMSu2s-s-Vx9O-8mGusujSCSMzUquMZEG6mK_h2WPNa8xoZsGGgs0iiH8GqQdOMQw9kGTqgYse69BjFiA-LvhrfAoQl092HtZwkonLF9zNjBsCxOUL7uaZ-_uEFQzKDKKX_rlvP1oNtlODqqHwV6la4U62hnq8e6s7S2HVh-ytNlC04nRRKxDO6uprPEBhjVPBtO-F_z0Due7fFniYnw)](https://mermaid-js.github.io/mermaid-live-editor/edit#pako:eNp1ksFqwzAQRH9F7MmG2HiVUDem9JL01pN99UWO5NgQW0GRAiXk36vGK2jsdg9CDDP7BqQbHLRUUMDRiHPHPst6ZH520U6PbX-sroa9NeadYc5TfEkxTxELnme4jVmSJKyMSu2s-s-Vx9O-8mGusujSCSMzUquMZEG6mK_h2WPNa8xoZsGGgs0iiH8GqQdOMQw9kGTqgYse69BjFiA-LvhrfAoQl092HtZwkonLF9zNjBsCxOUL7uaZ-_uEFQzKDKKX_rlvP1oNtlODqqHwV6la4U62hnq8e6s7S2HVh-ytNlC04nRRKxDO6uprPEBhjVPBtO-F_z0Due7fFniYnw)
 
 Servers:
 
 - Router: `172.16.17.11:27017`
 - Configuration server: `172.16.17.11:27019`
-- Shard servers:
+- Shard0 servers:
   - `172.16.17.20:27018`
   - `172.16.17.21:27018`
+- Shard1 servers:
+  - `172.16.17.30:27018`
+  - `172.16.17.31:27018`
+- Shard2 servers:
+  - `172.16.17.40:27018`
+  - `172.16.17.41:27018`
 
 Connection string: `mongodb://172.16.17.10:27017/?retryWrites=false`
 

@@ -64,7 +64,7 @@ tasks:
       - docker-compose up -d
       - ./sharded/start.sh
       - echo "To run the tests using this cluster export the following environment variables:"
-      - echo export TEST_MONGO_URI=mongodb://172.16.17.10:27017/?replicaSet=mongodb-action-replica-set&retryWrites=false
+      - echo export TEST_MONGO_URI=mongodb://172.16.17.10:27017/?retryWrites=false
       - echo export TEST_MONGO_MODE=sharded
     status:
       - test -n "$(docker-compose ps --services --filter "status=running")"
