@@ -51,4 +51,4 @@ runs:
           exit 1
         fi
         echo "Service: $(echo $MONGOCSTRING)"
-        echo "::set-output name=connection-string::$(echo $MONGOCSTRING)"
+        echo "connection-string=$(echo $MONGOCSTRING)" >> $GITHUB_OUTPUT
